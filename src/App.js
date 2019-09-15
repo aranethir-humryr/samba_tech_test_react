@@ -52,9 +52,10 @@ class App extends Component {
     else
       return (
         <div className="App">
+          <header>
+          <img class="logo" alt="Breaking Bad Logo" src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-original-577x577/s3/062010/breaking_bad.png?itok=L0FtRUfj"></img>
           <div>
             <form class="search_form">
-              <img class="logo" src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-original-577x577/s3/062010/breaking_bad.png?itok=L0FtRUfj"></img>
               <input
                 type="text"
                 placeholder="Digite o nome do personagem."
@@ -63,12 +64,19 @@ class App extends Component {
               />
             </form>
           </div>
+          </header>
+          
           <div class="block">
             <div class="results"> {this.state.filtered_data.map(index => 
-                                                <div class="unitary_result" key={index.name}>
-                                                  <img class="adjust_image" src={index.img}></img>
-                                                  <p>Name: {index.name}</p>
-                                                  <p>Status: {index.status}</p>
+                                                <div class="card" key={index.name}>
+                                                  <div class="unitary_result">
+                                                  <img class="adjust_image" alt="Character Profile" src={index.img}></img>
+                                                    <p>Name: {index.name}</p>
+                                                    <p>Status: {index.status}</p>
+                                                    <p>Birthday: {index.birthday}</p>
+                                                  </div>
+                                                  
+
                                                 </div>)}
                                                 
             </div>
